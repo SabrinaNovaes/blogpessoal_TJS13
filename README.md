@@ -10,12 +10,12 @@
 <br />
 
 <div align="center">
-  <img src="https://img.shields.io/github/languages/top/SabrinaNovaes/blogpessoal_nest_tjs13?style=flat-square" />
-  <img src="https://img.shields.io/github/repo-size/SabrinaNovaes/blogpessoal_nest_tjs13?style=flat-square" />
-  <img src="https://img.shields.io/github/languages/count/SabrinaNovaes/blogpessoal_nest_tjs13?style=flat-square" />
-  <img src="https://img.shields.io/github/last-commit/SabrinaNovaes/blogpessoal_nest_tjs13?style=flat-square" />
-  <img src="https://img.shields.io/github/issues/SabrinaNovaes/blogpessoal_nest_tjs13?style=flat-square" />
-  <img src="https://img.shields.io/github/issues-pr/SabrinaNovaes/blogpessoal_nest_tjs13?style=flat-square" />
+  <img src="https://img.shields.io/github/languages/top/SabrinaNovaes/blogpessoal_TJS13?style=flat-square" />
+  <img src="https://img.shields.io/github/repo-size/SabrinaNovaes/blogpessoal_TJS13?style=flat-square" />
+  <img src="https://img.shields.io/github/languages/count/SabrinaNovaes/blogpessoal_TJS13?style=flat-square" />
+  <img src="https://img.shields.io/github/last-commit/SabrinaNovaes/blogpessoal_TJS13?style=flat-square" />
+  <img src="https://img.shields.io/github/issues/SabrinaNovaes/blogpessoal_TJS13?style=flat-square" />
+  <img src="https://img.shields.io/github/issues-pr/SabrinaNovaes/blogpessoal_TJS13?style=flat-square" />
   <img src="https://img.shields.io/badge/status-construção-yellow" alt="Status: Em Construção">
 
 </div>
