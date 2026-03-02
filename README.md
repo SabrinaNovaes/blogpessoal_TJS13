@@ -1,98 +1,101 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+<# Projeto Blog Pessoal — Backend com NestJS
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<br />
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<div align="center">
+    <img src="https://i.imgur.com/O6PILGE.png" title="source: imgur.com" /> 
+</div>
 
-## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<br />
 
-## Project setup
+<div align="center">
+  <img src="https://img.shields.io/github/languages/top/rafaelq80/blogpessoal_nest_tjs13?style=flat-square" />
+  <img src="https://img.shields.io/github/repo-size/rafaelq80/blogpessoal_nest_tjs13?style=flat-square" />
+  <img src="https://img.shields.io/github/languages/count/rafaelq80/blogpessoal_nest_tjs13?style=flat-square" />
+  <img src="https://img.shields.io/github/last-commit/rafaelq80/blogpessoal_nest_tjs13?style=flat-square" />
+  <img src="https://img.shields.io/github/issues/rafaelq80/blogpessoal_nest_tjs13?style=flat-square" />
+  <img src="https://img.shields.io/github/issues-pr/rafaelq80/blogpessoal_nest_tjs13?style=flat-square" />
+  <img src="https://img.shields.io/badge/status-construção-yellow" alt="Status: Em Construção">
 
-```bash
-$ npm install
-```
+</div>
 
-## Compile and run the project
+<br />
 
-```bash
-# development
-$ npm run start
+## Descrição
 
-# watch mode
-$ npm run start:dev
 
-# production mode
-$ npm run start:prod
-```
 
-## Run tests
+O **Blog Pessoal** é uma API backend que permite que usuários publiquem, editem e visualizem postagens relacionadas a diferentes temas de forma organizada e segura.
 
-```bash
-# unit tests
-$ npm run test
+O projeto foi desenvolvido com fins educacionais, simulando uma aplicação real utilizada em ambientes profissionais, com foco na construção de **APIs REST escaláveis utilizando NestJS e TypeScript**.
 
-# e2e tests
-$ npm run test:e2e
+Entre os principais recursos disponíveis:
 
-# test coverage
-$ npm run test:cov
-```
+1. Criação, edição e exclusão de postagens
+2. Associação de postagens a temas específicos
+3. Cadastro e autenticação de usuários
+4. Consulta de postagens por tema ou usuário
+5. Controle de acesso em operações protegidas
 
-## Deployment
+------
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+## Sobre esta API
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+A API foi desenvolvida utilizando **Node.js**, **NestJS** e **TypeScript**, seguindo princípios de:
 
-## Resources
+- Arquitetura modular
+- Separação de responsabilidades
+- Padrão REST
+- Boas práticas de organização de código backend
 
-Check out a few resources that may come in handy when working with NestJS:
+A aplicação disponibiliza endpoints para gerenciamento dos recursos:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+- **Usuário**
+- **Postagem**
+- **Tema**
 
-## Support
+permitindo a interação entre usuários e conteúdos publicados.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+------
 
-## Stay in touch
+### Principais funcionalidades da API
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+1. Cadastro, autenticação e atualização de usuários
+2. Gerenciamento de temas para classificação das postagens
+3. Criação, edição, listagem e exclusão de postagens
+4. Relacionamento entre postagens, autores e temas
+5. Autenticação baseada em **JWT** para proteção das rotas
+
+------
+
+## Diagrama de Classes
+
+
+
+O diagrama abaixo representa a estrutura lógica das entidades da aplicação e seus relacionamentos dentro da API.
+
+```mermaid
+classDiagram
+class Postagem {
+  id : number
+  titulo : string
+  texto : string
+  data : Date
+  tema : Tema
+  usuario : Usuario
+}
+
+class Tema {
+  id : number
+  descricao : string
+  postagens : Postagem[]
+}
+
+class Usuario {
+  id : number
+... (341 linhas)
