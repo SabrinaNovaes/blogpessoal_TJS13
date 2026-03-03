@@ -19,6 +19,6 @@ export class Postagem {
     texto: string;
 
     @UpdateDateColumn() // REGISTRA AUTOMATICAMENTE A DATA E HORA DA ÚLTIMA ATUALIZAÇÃO DO REGISTRO
-    @Column({  })
+    @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP", nullable: false }) // TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
     data: Date;
 }
