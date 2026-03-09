@@ -3,6 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Postagem } from "../entities/postagem.entitie";
 import { ILike, Repository } from "typeorm";
 import { DeleteResult } from "typeorm/browser";
+import { TemaService } from "../../tema/service/tema.service";
 
 // classe repository fornece métodos para realizar operações de banco de dados, como criar, ler, atualizar e excluir registros da entidade Postagem. Ao injetar o repositório, podemos usar esses métodos para gerenciar os dados relacionados às postagens no banco de dados.
 
@@ -12,6 +13,7 @@ export class PostagemService {
     constructor(
         @InjectRepository(Postagem) // INJETANDO O REPOSITÓRIO DA ENTIDADE POSTAGEM PARA QUE POSSAMOS REALIZAR OPERAÇÕES DE BANCO DE DADOS COM ELA
         private postagemRepository: Repository<Postagem>, // VARIÁVEL QUE RECEBE O REPOSITÓRIO INJETADO, PERMITINDO ACESSAR MÉTODOS PARA GERENCIAR OS DADOS DA ENTIDADE POSTAGEM NO BANCO DE DADOS
+        private readonly temaService: TemaService // INJETANDO O SERVIÇO DE TEMA PARA QUE POSSAMOS USAR SEUS MÉTODOS DENTRO DO SERVIÇO DE POSTAGEM, COMO VERIFICAR SE UM TEMA EXISTE ANTES DE CRIAR OU ATUALIZAR UMA POSTAGEM
     ) {}
 
     // Promise é uma promessa de que a função findAll() retornará todos os objetos da postagem
@@ -43,6 +45,9 @@ export class PostagemService {
     }
 
     async create(postagem: Postagem): Promise<Postagem> {
+        
+        this.temaService.findById(postagem.tema.id); // VERIFICA SE O TEMA EXISTE, SE NÃO EXISTIR LANÇA UMA EXCEPTION HTTP COM O STATUS NOT_FOUND (404)
+        
         // INSERT INTO tb_postagens (titulo, texto) VALUES (? , ?)
         return await this.postagemRepository.save(postagem); // Usa o repositorio para salvar a nova postagem no banco de dados e retorna a postagem salva com o id gerado 
     }
@@ -54,6 +59,9 @@ export class PostagemService {
             throw new HttpException('ID da postagem inválido!', HttpStatus.BAD_REQUEST);
 
         await this.findById(postagem.id); // VERIFICA SE A POSTAGEM EXISTE, SE NÃO EXISTIR LANÇA UMA EXCEPTION HTTP COM O STATUS NOT_FOUND (404)
+        
+        await this.temaService.findById(postagem.tema.id); // VERIFICA SE O TEMA EXISTE, SE NÃO EXISTIR LANÇA UMA EXCEPTION HTTP COM O STATUS NOT_FOUND (404)
+        
         return await this.postagemRepository.save(postagem); // Usa o repositorio para atualizar a postagem no banco de dados e retorna a postagem atualizada
     }
     
