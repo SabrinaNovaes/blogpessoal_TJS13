@@ -19,14 +19,16 @@ export class PostagemService {
     // Promise é uma promessa de que a função findAll() retornará todos os objetos da postagem
     async findAll(): Promise<Postagem[]> { // Método assíncrono que retorna uma promessa de um array de postagens
         // SELECT * FROM tb_postagens
-        return this.postagemRepository.find({ relations: { tema: true} }); // Usa o repositório para buscar todas as postagens no banco de dados e retorna o resultado
+        return this.postagemRepository.find({ 
+            relations: { tema: true, usuario: true }
+        }); // Usa o repositório para buscar todas as postagens no banco de dados e retorna o resultado
     }
 
     async findById(id: number): Promise<Postagem> {
         // SELECT * FROM tb_postagens WHERE id = id
         const postagem = await this.postagemRepository.findOne({
             where: { id },
-            relations: { tema: true}
+            relations: { tema: true, usuario: true }
         })
 
         // VERIFICA SE A POSTAGEM EXISTE, SE NÃO EXISTIR LANÇA UMA EXCEPTION HTTP COM O STATUS NOT_FOUND (404) 
@@ -40,7 +42,7 @@ export class PostagemService {
         // SELECT * FROM tb_postagens WHERE titulo LIKE '%titulo%'
         return this.postagemRepository.find({
             where: { titulo: ILike(`%${titulo}%`)},
-            relations: { tema: true}
+            relations: { tema: true, usuario: true }
         })
     }
 
