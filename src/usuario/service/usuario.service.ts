@@ -52,7 +52,10 @@ export class UsuarioService {
         const buscaUsuario = await this.findByUsuario(usuario.usuario);
 
         if (buscaUsuario)
-            throw new HttpException("O Usuario já existe!", HttpStatus.BAD_REQUEST);
+            throw new HttpException(
+                "O Usuario já existe!",
+                HttpStatus.BAD_REQUEST
+            );
 
         usuario.senha = await this.bcrypt.criptografarSenha(usuario.senha)
         return await this.usuarioRepository.save(usuario);
