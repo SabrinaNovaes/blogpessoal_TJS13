@@ -1,5 +1,5 @@
 import { InjectRepository } from "@nestjs/typeorm";
-import { Tema } from "../entities/tema.entitie";
+import { Tema } from "../entities/tema.entity";
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { ILike, Repository } from "typeorm";
 
