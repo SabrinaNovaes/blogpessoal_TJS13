@@ -8,7 +8,7 @@ import { AppModule } from '../src/app.module';
 describe('Testes dos Módulos Usuário e Auth (e2e)', () => {
 
   let token: any;
-  let usuarioId, temaId, postagemId, temaDescricao: any;
+  let usuarioId, temaId, temaDescricao: any;
   let app: INestApplication<App>;
 
   //beforeEach - executa um por vez a cada vez
@@ -173,49 +173,5 @@ describe('Testes dos Módulos Usuário e Auth (e2e)', () => {
 
   expect(resposta.status).toBe(204)
   })
-
-  // TESTE POSTAGENS
-
-//   it("01 - Deve Listar todas Postagens Existentes", async () => {
-//     const resposta = await request(app.getHttpServer())
-//       .get('/postagens')
-//       .set('Authorization', `${token}`)
-
-//     expect(resposta.status).toBe(200)
-//   })
-
-//   it("02 - Deve Listar Postagens por Id", async () => {
-//     const resposta = await request(app.getHttpServer())
-//     .get(`/postagens/${postagemId}`)
-//     .set('Authorization', `${token}`)
-
-//     expect(resposta.status).toBe(200)
-//     postagemId = resposta.body.id
-//   })
-
-//   it("03 - Deve Cadastrar novas Postagens", async () => {
-//     const resposta = await request(app.getHttpServer())
-//     .post('/postagens')
-//     .set('Authorization', `${token}`)
-//     .send({
-//       titulo: 'Postagem 1',
-//       texto: 'Texto da Postagem 1'
-//     })
-//     expect(resposta.status).toBe(201)
-
-//     postagemId = resposta.body.id
-//   })
-
-// it("04 - Deve Atualizar as Postagens existentes", async () => {
-//     const resposta = await request(app.getHttpServer())
-//       .put('/postagens')
-//       .set('Authorization', `${token}`)
-//       .send({
-//         id: postagemId,
-//         titulo: 'Postagem 1 Atualizada',
-//         texto: 'Texto da Postagem 1 Atualizado',
-//       })
-//     expect(resposta.status).toBe(200)
-//   })
 
 })
