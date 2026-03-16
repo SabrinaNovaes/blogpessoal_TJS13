@@ -5,7 +5,7 @@ import { JwtAuthGuard } from "../../auth/guard/jwt-auth.guard";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 
 @ApiTags('Tema')
-@UseGuards(JwtAuthGuard)
+// @UseGuards(JwtAuthGuard)
 @Controller("/temas")
 @ApiBearerAuth()
 export class TemaController {
@@ -20,17 +20,17 @@ export class TemaController {
         return this.temaService.findAll();
     }
 
-    @Get("/:id")
-    @HttpCode(HttpStatus.OK)
-    findById(@Param('id', ParseIntPipe) id: number): Promise<Tema> {
-        return this.temaService.findById(id);
-    }
-
     @Get("/descricao/:descricao")
     @HttpCode(HttpStatus.OK)
     findAllByDescricao(@Param('descricao') descricao : string): Promise<Tema[]> {
         return this.temaService.findAllByDescricao(descricao);
     } 
+
+    @Get("/:id")
+    @HttpCode(HttpStatus.OK)
+    findById(@Param('id', ParseIntPipe) id: number): Promise<Tema> {
+        return this.temaService.findById(id);
+    }
 
     @Post()
     @HttpCode(HttpStatus.CREATED)
