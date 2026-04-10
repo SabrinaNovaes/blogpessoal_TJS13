@@ -13,7 +13,7 @@ export class PostagemController {
 
     constructor(
         private readonly postagemService: PostagemService
-    ){}
+    ) { }
 
     @Get()
     @HttpCode(HttpStatus.OK)
@@ -29,7 +29,7 @@ export class PostagemController {
 
     @Get("/titulo/:titulo")
     @HttpCode(HttpStatus.OK)
-    findAllByTitulo(@Param('titulo') titulo : string): Promise<Postagem[]> {
+    findAllByTitulo(@Param('titulo') titulo: string): Promise<Postagem[]> {
         return this.postagemService.findAllByTitulo(titulo);
     }
 
@@ -46,8 +46,21 @@ export class PostagemController {
     }
 
     @Delete("/:id")
-    @HttpCode(HttpStatus.NO_CONTENT) 
+    @HttpCode(HttpStatus.NO_CONTENT)
     delete(@Param('id', ParseIntPipe) id: number) {
         return this.postagemService.delete(id);
+    }
+
+    // Método Like
+    @Put('/like/:id')
+    @HttpCode(HttpStatus.OK)
+    like(@Param('id') id: number): Promise<Postagem> {
+        return this.postagemService.like(id);
+    }
+
+    @Put('/comentar/:id')
+    @HttpCode(HttpStatus.OK)
+    comentario(@Param('id') id: number): Promise<Postagem>{
+        return this.postagemService.comentario(id);
     }
 }

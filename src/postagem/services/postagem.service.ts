@@ -73,4 +73,36 @@ export class PostagemService {
         return await this.postagemRepository.delete(id);
     } 
 
+    // Função Likes
+    async like(id: number): Promise<Postagem> {
+
+        let buscarPostagem = await this.findById(id);
+
+        if (!buscarPostagem)
+            throw new HttpException('Postagem não encontrado!', HttpStatus.NOT_FOUND);
+
+        let novaCurtida = buscarPostagem.like + 1;
+
+        return await this.postagemRepository.save({
+            ...buscarPostagem,
+            like: novaCurtida
+        });
+    }
+
+    // Função Comentar
+    async comentario(id: number): Promise<Postagem> {
+
+        let buscarPostagem = await this.findById(id);
+
+        if (!buscarPostagem)
+            throw new HttpException('Postagem não encontrado!', HttpStatus.NOT_FOUND);
+
+        let novoComentario = buscarPostagem.comentario;
+
+        return await this.postagemRepository.save({
+            ...buscarPostagem,
+            comentario: novoComentario
+        });
+    }
+
 }

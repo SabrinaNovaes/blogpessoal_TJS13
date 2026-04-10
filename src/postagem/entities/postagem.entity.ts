@@ -35,6 +35,16 @@ export class Postagem {
     @UpdateDateColumn()
     data: Date;
 
+    @ApiProperty()
+    @Column({ type: "int", nullable: true, default: 0 })
+    like: number;
+
+    @ApiProperty()
+    @Column({ nullable: true })
+    comentario: string;
+
+
+
     @ApiProperty({ type: () => Tema }) 
     @ManyToOne(() => Tema, (tema) => tema.postagem, { onDelete: "CASCADE" })
     tema: Tema; // chave estrangeira para a entidade tema, indicando que uma postagem pertence a um tema
