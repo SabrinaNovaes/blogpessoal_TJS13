@@ -40,7 +40,7 @@ export class Postagem {
     like: number;
 
     @ApiProperty()
-    @Column({ nullable: true })
+    @Column({ length: 1000, nullable: true })
     comentario: string;
 
 

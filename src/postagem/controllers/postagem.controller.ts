@@ -60,7 +60,7 @@ export class PostagemController {
 
     @Put('/comentar/:id')
     @HttpCode(HttpStatus.OK)
-    comentario(@Param('id') id: number): Promise<Postagem>{
-        return this.postagemService.comentario(id);
+    comentario(@Param('id') id: number, @Body() body: { texto: string }): Promise<Postagem> {
+        return this.postagemService.comentario(id, body.texto);
     }
 }
